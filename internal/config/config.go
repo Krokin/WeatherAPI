@@ -5,14 +5,12 @@ import (
 )
 
 type Config struct {
-	IsDebug *bool  `yaml:"is_debug"`
-	OWN_API string `yaml:"own_api"`
+	OWN_API string `yaml:"OWN_API"`
 	Port string `yaml:"port"`
-
 }
 
 func GetConfig() (*Config, error) {
-	var cfg = new(Config)
-	err := cleanenv.ReadConfig("config.yml", &cfg)
-	return cfg, err
+	var cfg Config
+	err := cleanenv.ReadConfig("../../configs/config.yml", &cfg)
+	return &cfg, err
 }

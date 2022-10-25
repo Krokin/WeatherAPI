@@ -1,4 +1,4 @@
-module github.com/jinzhu/gorm
+module github.com/Krokin/WeatherApi
 
 go 1.19
 
