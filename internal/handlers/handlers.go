@@ -83,16 +83,16 @@ func getData(city string) (*CityData, error){
 
 	var newCity *CityData
 	newCity = &CityData{Name: city, 
-						Coordinates: struct{Longitude float32; 
-											Latitude float32}{Longitude: float32(w.GeoPos.Longitude), 
-															Latitude: float32(w.GeoPos.Latitude)},
-						Weather: struct{Description string; 
-										Temp float32; 
-										TempMin float32;
-										TempMax float32}{Description: w.Weather[0].Description,
-														Temp: float32(w.Main.Temp), 
-														TempMin: float32(w.Main.TempMin),
-														TempMax: float32(w.Main.TempMax)},
+			Coordinates: struct{Longitude float32; 
+					Latitude float32}{Longitude: float32(w.GeoPos.Longitude), 
+							Latitude: float32(w.GeoPos.Latitude)},
+			Weather: struct{Description string; 
+					Temp float32; 
+					TempMin float32;
+					TempMax float32}{Description: w.Weather[0].Description,
+							Temp: float32(w.Main.Temp), 
+							TempMin: float32(w.Main.TempMin),
+							TempMax: float32(w.Main.TempMax)},
 	}
 	return newCity, err
 }
